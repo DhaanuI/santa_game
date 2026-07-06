@@ -1,0 +1,30 @@
+{
+  "name": "secret-santa-game",
+  "version": "1.0.0",
+  "description": "Automated Secret Santa assignment system with constraint validation",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node tests/manual-test.js",
+    "lint": "eslint src tests"
+  },
+  "keywords": [
+    "secret-santa",
+    "employee-management",
+    "csv",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
