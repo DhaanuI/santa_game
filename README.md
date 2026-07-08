@@ -9,7 +9,7 @@ An automated Secret Santa assignment system for company employees, built with No
 - **Input Validation**: Comprehensive validation of employee data and email formats
 - **Modular Architecture**: Clean, functional design with separated concerns
 - **Error Handling**: Clear error messages for invalid inputs or impossible constraints
-- **CSV I/O**: Reads employee data from CSV and writes assignments to CSV
+- **CSV & Excel Support**: Reads employee data from CSV or XLSX files, writes assignments to CSV
 - **Tested**: Unit tests covering all core functionality
 
 ## Architecture
@@ -61,7 +61,11 @@ node src/index.js data/employees.csv output/assignments.csv
 Avoid repeating assignments from the previous year:
 
 ```bash
+# Using CSV files
 node src/index.js data/employees.csv output/assignments.csv data/previous_assignments.csv
+
+# Using Excel files (also supported)
+node src/index.js data/employees.xlsx output/assignments.csv data/previous.xlsx
 ```
 
 ### Command Line Arguments
@@ -77,9 +81,11 @@ Arguments:
 
 ## Input File Format
 
-### Employees CSV
+The application supports both **CSV** and **Excel (.xlsx, .xls)** files for input.
 
-The employees CSV file must have these columns:
+### Employees File (CSV or Excel)
+
+The file must have these columns:
 - `Employee_Name`: Full name of the employee
 - `Employee_EmailID`: Email address of the employee
 
@@ -91,9 +97,9 @@ Bob Smith,bob.smith@acme.com
 Charlie Brown,charlie.brown@acme.com
 ```
 
-### Previous Assignments CSV (Optional)
+### Previous Assignments File (CSV or Excel - Optional)
 
-The previous assignments CSV file must have these columns:
+The file must have these columns:
 - `Employee_Name`: Giver's name
 - `Employee_EmailID`: Giver's email
 - `Secret_Child_Name`: Receiver's name
